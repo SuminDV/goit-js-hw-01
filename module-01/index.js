@@ -172,8 +172,30 @@
 // при этом результат prompt плюсовать к общей сумме не нужно,
 // после чего снова пользователю предлагается ввести число в prompt.
 
-// let total = 0;
-// let userInput;
+let total = 0;
+let userInput;
+
+while(userInput !== null) {
+userInput = prompt('write number');
+if(!Number.isNaN(Number(userInput)) && Number(userInput) > 0) {
+  let isNumber = Number(userInput);
+  total = total + isNumber;
+  console.log(`${total}`);
+}
+else if(Number.isNaN(Number(userInput))) {
+  alert('Writing not a number, try again')
+}
+}
+alert(`Total sum of numbers = ${total}`);
+
+
+
+
+
+
+
+
+
 
 // while(userInput !== null) {
 //   userInput = prompt('Write number');

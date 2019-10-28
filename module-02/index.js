@@ -3,12 +3,7 @@
   // для каждого элемента массива будет выводить в консоль сообщение в формате [номер элемента] - [значение элемента].
   // Нумерация должна начинаться с 1. К примеру для первого элемента массива ['Mango', 'Poly', 'Ajax']
   //  с индексом 0 будет выведено '1 - Mango', а для индекса 2 выведет '3 - Ajax'. 
-  // Вызовы функции для проверки работоспособности твоей реализации.
-  
-  // logItems(['Mango', 'Poly', 'Ajax', 'Lux', 'Jay', 'Kong']);
-  
-  // logItems([5, 10, 15, 20, 25, 30, 35, 40, 45, 50]);
-
+  // Вызовы функции для проверки работоспособности твоей реализации. 
   
 //   const logItems = function(array) {
 //     for(let i = 0; i < array.length; i += 1) {
@@ -30,6 +25,7 @@
 // цену гравировки одного слова, и возвращающую цену гравировки.
 
 // Вызовы функции для проверки работоспособности твоей реализации.
+
 
 // function calculateEngravingPrice(message, pricePerWord) {
 //   const arr = message.split(' ');
@@ -88,6 +84,37 @@
 // и добавляет в конец строки троеточие '...', после чего возвращает укороченную версию.
 // Вызовы функции для проверки работоспособности твоей реализации.
 
+
+// const formatString = function(string) {
+//   let ourResult = string;
+
+//   if(string.length > 40) {
+//     ourResult = `${string.slice(0, 40)} ...`
+//   }
+// return ourResult;
+// }
+
+
+// console.log(formatString('Curabitur ligula sapien, tincidunt non.'));
+// // вернется оригинальная строка
+
+// console.log(formatString('Vestibulum facilisis, purus nec pulvinar iaculis.'));
+// // вернется форматированная строка
+
+// console.log(formatString('Curabitur ligula sapien.'));
+// // вернется оригинальная строка
+
+// console.log(
+//   formatString(
+//     'Nunc sed turpis. Curabitur a felis in nunc fringilla tristique.',
+//   ),
+// );
+// // вернется форматированная строка
+
+
+
+
+
 // const formatString = function(string) {
 //   let foundResult = string;
 
@@ -120,6 +147,32 @@
 // если запрещенных слов нет функция возвращает false. Слова в строке могут быть в произвольном регистре.
 
 // Вызовы функции для проверки работоспособности твоей реализации.
+
+// const checkForSpam = function(str){
+//   if(str.toLowerCase().includes('spam') || str.toLowerCase().includes('sale')) {
+//   return true;
+//   }
+//   return false;
+// }
+
+
+// console.log(checkForSpam('Latest technology news')); // false
+
+// console.log(checkForSpam('JavaScript weekly newsletter')); // false
+
+// console.log(checkForSpam('Get best sale offers now!')); // true
+
+// console.log(checkForSpam('[SPAM] How to earn fast money?')); // true
+
+
+
+
+
+
+
+
+
+
 
 // const checkForSpam = function(str) {
 //   if(str.toLowerCase().includes('spam') || str.toLowerCase().includes('sale')) {
@@ -154,26 +207,26 @@
 // 'Было введено не число, попробуйте еще раз', при этом результат prompt 
 // записывать в массив чисел не нужно, после чего снова пользователю предлагается ввести число в prompt.
 
-// let input;
-// const numbers = [];
-// let total = 0;
+let input;
+const numbers = [];
+let total = 0;
 
-// while(input !== null) {
-//   input = prompt('Введите произвольное число');
+while(input !== null) {
+  input = prompt('Введите произвольное число');
   
-//   if(isNaN(input)) {
-//     alert('Было введено не число, попробуйте еще раз')  
-//   }
-//   else {
-//  numbers.push(+input);
-//   }
+  if(isNaN(input)) {
+    alert('Было введено не число, попробуйте еще раз')  
+  }
+  else {
+ numbers.push(+input);
+  }
   
-// }
-// for(const number of numbers) {
-//   total += number;
-// }
+}
+for(const number of numbers) {
+  total += number;
+}
 
-// console.log(`total = ${total}`);
+console.log(`total = ${total}`);
 
 
 // // Задание 7 - дополнительное, выполнять не обязательно

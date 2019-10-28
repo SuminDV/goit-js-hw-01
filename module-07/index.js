@@ -50,7 +50,7 @@
 // let sum = '';
 // const list = document.querySelector('#ingredients');
 // ingredients.forEach(el => {
-//   sum += `<li>${el} </li>`;
+//   sum += `<li>${el}</li>`;
 // })
 // list.insertAdjacentHTML('afterbegin', sum)
 
@@ -103,13 +103,13 @@ ul.insertAdjacentHTML('afterbegin', imgStr)
 // Создай функции increment и decrement для увеличения и уменьшения значения счетчика
 // Добавь слушатели кликов на кнопки, вызовы функций и обновление интерфейса
 
-const newValue = document.querySelector("#value");
+const totalValue = document.querySelector("#value");
 const increment = document.querySelector('button[data-action="increment"]');
 const decrement = document.querySelector('button[data-action="decrement"]');
 
-newValue.textContent = 0;
-increment.addEventListener("click", () => newValue.textContent= +(newValue.textContent) +1);
-decrement.addEventListener("click", () => newValue.textContent= +(newValue.textContent) -1);
+let newValue = 0;
+increment.addEventListener("click", () => totalValue.textContent= newValue +=1);
+decrement.addEventListener("click", () => totalValue.textContent= newValue -=1);
 
 // Задание 5
 // Напиши скрипт который, при наборе текста в инпуте 
