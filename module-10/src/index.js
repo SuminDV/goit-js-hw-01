@@ -1,3 +1,4 @@
 import './styles.css';
-import './js/ourCode';
+import './js/ourCode.js';
+
 

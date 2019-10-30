@@ -1,4 +1,4 @@
-import menu from './menu';
+import menu from './menu.js';
 // import handlebars from '.../../handlebars/dist/'
 import dishes from '../templates/dishes.hbs';
 
@@ -9,28 +9,40 @@ const Theme = {
 };
 
 const menuItems = dishes(menu);
-console.log(menuItems);
+// console.log(menuItems);
 
 const body = document.querySelector('body')
-const switchInput = document.querySelector('switch__input')
-const menuDishes = document.querySelector('#menu');
-console.log(menuDishes);
+const our = document.querySelector('.switch__input')
+const menuDishes = document.querySelector('.menu');
 menuDishes.insertAdjacentHTML('afterbegin', menuItems);
+console.log(menuDishes);
 
 // let ourTheme = localStorage.getItem('theme');
 // ourTheme = localStorage.setItem('theme', Theme.DARK);
 // console.log('ourTheme', ourTheme);
 
+if (localStorage.getItem('Theme') === null) {
+  localStorage.setItem('Theme', Theme.LIGHT)
+ }
+if (localStorage.getItem('Theme') === Theme.DARK) {
+  body.classList.add(Theme.DARK);
+  our.checked = true;
+ }
+if (localStorage.getItem('Theme') === Theme.LIGHT) {
+  body.classList.add(Theme.LIGHT);
+  our.checked = false;
+ }
+
 body.addEventListener('input', e => {
-  if(e.target.nodeName === true) {
-    body.classList.remove('light-theme');
-    body.classList.add('dark-theme');
-    localStorage.setItem('theme', `${Theme.DARK}` )
+  if(e.target.checked === true) {
+    body.classList.remove(Theme.LIGHT);
+    body.classList.add(Theme.DARK);
+    localStorage.setItem('Theme', Theme.DARK )
   }
   else {
-    body.classList.remove('dark-theme');
-    body.classList.add('light-theme');
-    localStorage.setItem('theme', `${Theme.LIGHT}`)
+    body.classList.remove(Theme.DARK);
+    body.classList.add(Theme.LIGHT);
+    localStorage.setItem('Theme', Theme.LIGHT)
   }
 })
 
